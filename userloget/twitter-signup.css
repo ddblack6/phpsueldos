@@ -1,0 +1,183 @@
+div.centerTable{
+        text-align: center;
+         
+}
+ .editar {color: blue; cursor:pointer;} 
+ 
+div.centerTable table {
+            
+       margin: 0 auto;
+       text-align: left;
+}
+*:focus{
+	outline:none; /* Prevents blue border in Webkit */
+}
+
+
+
+
+form {
+	margin: 20px auto;
+}
+
+p {
+	line-height: 1.6;
+}
+#twitter-outer{
+	background:url("https://s3.amazonaws.com/twitter_production/a/1274834447/images/bg-clouds.png") repeat-x scroll 0 0 #C0DEED;
+	height:385px;
+}
+#twitter-logo{
+	margin-left:192px;
+	width:180px;
+}
+#twitter-logo img{
+	margin-top:10px;
+}
+.content-bubble-arrow  {
+	background-image:url("https://s3.amazonaws.com/twitter_production/a/1274834447/images/arr2.gif");
+	background-position:32px 0;
+	background-repeat:no-repeat;
+	height:11px;
+	overflow:hidden;
+}
+#twitter{
+	margin:auto auto  auto auto;
+	width:575px;
+	padding:20px;
+	-moz-border-radius:20px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background:#fff;
+}
+#anchorT2{
+	margin:auto auto  auto auto;
+	width:600px;
+	padding:10px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background:#fff;
+}
+#twitter label , #gaiaOnline label{
+	float:left;
+	width:95px;
+	color:#666666;
+	text-align:right;
+	padding:10px 10px 0 0;
+	font:16px 'Lucida Grande',sans-serif;
+}
+#twitter input,#twitter select ,#twitter radio,#twitter  textarea , #gaiaOnline input , #gaiaOnline textarea{
+	background-color:#fff;
+	border:1px solid #ccc;
+	font-size:18px;
+	margin:0;
+	padding:8px;
+	width:200px;
+	display:block;
+	
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	float:left;
+}
+
+#twitter textarea {
+		min-height:200px;
+}
+
+#twitter input:hover, #twitter textarea:hover {
+	border-color:inherit !important;
+	background-color:#EfEfEf;
+	-webkit-border-radius:5px 0 0 5px;
+	-moz-border-radius:5px 0 0 5px;
+	border-radius:5px 0 0 5px;
+
+}
+
+/* The interesting bit */
+
+
+#twitter  input:required,#twitter  textarea:required {
+}
+
+#twitter  input:valid,#twitter  textarea:valid {
+	opacity:0.8;
+}		
+
+#twitter input:focus:invalid,#twitter textarea:focus:invalid {
+	border:1px solid red;
+	background-color:#FFEFF0;
+}
+
+#twitter input[type=submit] {
+	background:none;
+	font-size:15px;
+	opacity:1;
+	padding:5px;
+	width:150px;
+	-moz-border-radius:5px;
+	-webkit--border-radius:5px;
+	border-radius:5px;
+	cursor:pointer;
+	margin-bottom:-10px;
+	margin-left:103px;
+	margin-top:10px;
+	background:url("https://s3.amazonaws.com/twitter_production/a/1274834447/images/buttons/bg-btn.gif") repeat-x scroll 0 0 #DDDDDD;
+	text-shadow:1px 1px 0 #FFFFFF;
+	border-color:#DDDDDD #DDDDDD #CCCCCC;
+	color: #333;
+}
+#twitter input[type=button] {
+	background:none;
+	font-size:15px;
+	opacity:1;
+	padding:5px;
+	width:150px;
+	-moz-border-radius:5px;
+	-webkit--border-radius:5px;
+	border-radius:5px;
+	cursor:pointer;
+	margin-bottom:-10px;
+	margin-left:103px;
+	margin-top:10px;
+	background:url("https://s3.amazonaws.com/twitter_production/a/1274834447/images/buttons/bg-btn.gif") repeat-x scroll 0 0 #DDDDDD;
+	text-shadow:1px 1px 0 #FFFFFF;
+	border-color:#DDDDDD #DDDDDD #CCCCCC;
+	color: #333;
+}
+#twitter .outerDiv{
+	-webkit-transition: all 1s linear;
+	margin-bottom:16px;
+	margin-top:8px;
+}
+#twitter .outerDiv:hover .message{
+	opacity:1;
+	display:block;
+}
+#twitter .message{	
+	width:200px;
+	float:left;
+	opacity:0;
+	-moz-border-radius:0 10px 10px 0;
+	-webkit-border-radius:0 10px 10px 0;
+	border-radius-bottomright:0 10px 10px 0;
+	background:url("https://s3.amazonaws.com/twitter_production/a/1274739546/images/signup_info.gif") no-repeat scroll 13px 50% #F2F2F2;
+	border-color:#DBDBDB;
+	border-style:solid;
+	border-width:1px 1px 1px 2px;
+	color:#666666;
+	display:none;
+	font-size:12px;
+	line-height:1.45em;
+	padding:0.85em 10px 0.85em 30px;
+	text-transform:lowercase;
+}
+
+.clearfix{
+	clear:both;
+}

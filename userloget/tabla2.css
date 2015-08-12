@@ -1,0 +1,124 @@
+/*
+Theme: Azulón
+Author: Jorge Epuñan H.
+URL: www.csslab.cl
+Country: Chile
+*/
+
+#itsthetable {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #036;
+}
+
+#itsthetable caption {
+	font-size: 48px;
+	color: #036;
+	font-weight: bolder;
+	font-variant: small-caps;
+}
+
+#itsthetable th {
+	font-size: 12px;
+	color: #FFF;
+	background-color: #06C;
+	padding: 8px 4px;
+	border-bottom: 1px solid #015ebc;
+}
+
+#itsthetable table {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border: 1px solid #06C;
+	width: 100%
+}
+
+#itsthetable th a:link, #itsthetable th a:visited {
+	color: #FFF;
+	text-decoration: none;
+	border-left: 5px solid #FFF;
+	padding-left: 3px;
+}
+
+#itsthetable th a:hover, #itsthetable th a:active {
+	color: #F90;
+	text-decoration: line-through;
+	border-left: 5px solid #F90;
+	padding-left: 3px;
+}
+
+#itsthetable tbody th:hover {
+	background-image: url(imgs/tbody_hover.gif);
+	background-position: bottom;
+	background-repeat: repeat-x;
+}
+
+#itsthetable td {
+	background-color: #f2f2f2;
+	padding: 4px;
+	font-size: 12px;
+}
+
+#itsthetable td:hover {
+	background-color: #f8f8f8;
+
+}
+
+#itsthetable td a:link, #itsthetable td a:visited {
+	color: #039;
+	text-decoration: none;
+	border-left: 3px solid #039;
+	padding-left: 3px;
+}
+
+#itsthetable td a:hover, #itsthetable td a:active {
+	color: #06C;
+	text-decoration: line-through;
+	border-left: 3px solid #06C;
+	padding-left: 3px;
+}
+
+#itsthetable th {
+	text-align: left;
+	width: 150px;
+}
+
+#itsthetable tr {
+	border-bottom: 1px solid #CCC;
+}
+
+#itsthetable thead th {
+	background-image: url(imgs/thead_back.gif);
+	background-repeat: repeat-x;
+	background-color: #06C;
+	height: 30px;
+	font-size: 18px;
+	text-align: center;
+	text-shadow: #333 2px 2px;
+	border: 2px;
+}
+
+#itsthetable tfoot th {
+	background-image: url(imgs/tfoot_back.gif);
+	background-repeat: repeat-x;
+	background-color: #036;
+	height: 30px;
+	font-size: 28px;
+	text-align: center;
+	text-shadow: #333 2px 2px;
+}
+
+#itsthetable tfoot td {
+	background-image: url(imgs/tfoot_back.gif);
+	background-repeat: repeat-x;
+	background-color: #036;
+	color: FFF;
+	height: 30px;
+	font-size: 24px;
+	text-align: left;
+	text-shadow: #333 2px 2px;
+}
+
+tbody td a[href="http://www.csslab.cl/"] {
+	font-weight: bolder;
+}
