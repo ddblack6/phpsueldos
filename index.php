@@ -77,7 +77,7 @@ $(document).ready(function(){
 </body>
 <section class="contact">
     <p>
-        Desarrollado por DINF - soporte@intn.gov.py
+        Desarrollado por DINF - mriveros@intn.gov.py
     </p>
 </section>
 </html>

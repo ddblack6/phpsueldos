@@ -51,7 +51,7 @@
         elseif ($var==2){
             conexionlocal();
                 $query ='';
-                $query = "update usuario set usu_ci= (regexp_replace($ci, '.', '', 'g')) , usu_nick='$nick', usu_nom='$nombre', usu_ape='$apellido', usu_pas=MD5('$password'),email='$mail' where usu_cod= ".$codigo.";";
+                $query = "update usuario set usu_ci= $ci , usu_nick='$nick', usu_nom='$nombre', usu_ape='$apellido', usu_pas=MD5('$password'),email='$mail' where usu_cod= ".$codigo.";";
                 $ci=0;$nick='';$nombre='';$apellido='';$password='';$mail='';$codigo=0;
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
