@@ -81,12 +81,12 @@ function Header()
 }
 }
 
-$str_conexao='dbname=contabilidade port=5434 user=postgres password=postgres';
+$str_conexao='dbname=contabilidade port=5432 user=postgres password=postgres';
 $conexao=pg_connect($str_conexao) or die('A conex�o ao banco de dados falhou!');
 $consulta=pg_exec($conexao,'select * from conveniologin');
 $numregs=pg_numrows($consulta);
 
-$connection_string = 'dbname=salario port=5434 user=postgres password=postgres';
+$connection_string = 'dbname=salario port=5432 user=postgres password=postgres';
 $conn=pg_connect($connection_string) or die('La conexion a la base de datos a fallado!');
 //Aqui la segunda parte
 $connection_string = 'DRIVER={SQL Server};SERVER=INTN23\SQLEXPRESS;DATABASE=att';

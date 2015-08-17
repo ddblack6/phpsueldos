@@ -45,7 +45,7 @@
                             <div class='clearfix'></div>
                             <div class='outerDiv'>
                             <input type="submit" name="submit" value="Generar" />
-                            <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://localhost/app/phpsueldos/userloget/principal.php'"/>  
+                            <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
                             </div>
                             </div>
                          </form>  

@@ -144,7 +144,7 @@ $pdf->AddPage('L', 'legal');
 $pdf->SetFont('Arial','',6);
 
 //Connection and query
-$conectate=pg_connect("host=localhost port=5434 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by max(cat.cat_cod) ) as lineas,
                     max(Sal.usu_cod) as usu_cod
