@@ -39,7 +39,7 @@
                        
                       }else{              
                             //se define el Query   
-                            $query = "INSERT INTO usuario(usu_ci, usu_nick, usu_nom, usu_ape, usu_pas,email) VALUES ($ci, '$nick', '$nombre', '$apellido', MD5('$password'), '$mail');";
+                            $query = "INSERT INTO usuario(usu_ci, usu_nick, usu_nom, usu_ape, usu_pas,email,usu_activo) VALUES ($ci, '$nick', '$nombre', '$apellido', MD5('$password'), '$mail','t');";
                             //ejecucion del query
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
