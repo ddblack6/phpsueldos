@@ -82,13 +82,13 @@ session_start();
             document.getElementById("sueldoNeto").value=SueldoNeto;
             var dias=document.getElementById('DiaAusencia').value;
             var SueldoBrutoIni=document.getElementById('sueldoBruto').value;
-            var jornal=SueldoBrutoIni/30;
+            var jornal=Math.round(SueldoBrutoIni/30);
             document.getElementById("sal_aus").value=jornal*dias;
             
             var sal_aus= document.getElementById("sal_aus").value;
             var sueldodescontado=SueldoBrutoIni-sal_aus;
-            document.getElementById("sal_ips").value=(sueldodescontado*9)/100;
-            document.getElementById("IPSMONTO").value=(sueldodescontado*9)/100;
+            document.getElementById("sal_ips").value=Math.round((sueldodescontado*9)/100);
+            document.getElementById("IPSMONTO").value=Math.round((sueldodescontado*9)/100);
             
             var ipsaux=document.getElementById("IPSMONTO").value;
             document.getElementById("sueldoNeto").value=parseFloat(SueldoNeto)-ipsaux-(jornal*dias);
