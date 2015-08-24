@@ -23,7 +23,7 @@ function obtenerConexion()
 		$db->SetFetchMode(ADODB_FETCH_ASSOC); // muestra los arreglos con asociaciones
 		//$db->SetFetchMode(ADODB_FETCH_NUM); //muestra los arreglos enumerados
 		//$db->Connect('127.0.0.1','postgres','postgres','horariosweb');
-		$db->Connect("host=127.0.0.1 port=5432 dbname=salario user=postgres password=postgres");
+		$db->Connect("host=127.0.0.1 port=5434 dbname=salario user=postgres password=postgres");
 		//$db->debug=true;	
 	} 
 	catch (exception $e) 

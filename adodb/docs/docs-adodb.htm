@@ -1145,9 +1145,9 @@ driver specific connection string: </span></p>
 solid #DDDDDD .75pt;padding:9.0pt 18.0pt 9.0pt 18.0pt;background:#EEEEEE'><pre><span
 style='mso-bookmark:pdo'><o:p>&nbsp;</o:p></span></pre><pre><span
 style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn =&amp; NewADConnection('pdo');</span></pre><pre><span
-style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect('mysql:host=192.168.0.99',$user,$pwd,$mydb);</span></pre><pre><span
-style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect('mysql:host=192.168.0.99;dbname=mydb',$user,$pwd);</span></pre><pre><span
-style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect(&quot;mysql:host=192.168.0.99;dbname=mydb;username=$user;password=$pwd&quot;);</span></pre></div>
+style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect('mysql:host=localhost',$user,$pwd,$mydb);</span></pre><pre><span
+style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect('mysql:host=localhost;dbname=mydb',$user,$pwd);</span></pre><pre><span
+style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn-&gt;Connect(&quot;mysql:host=localhost;dbname=mydb;username=$user;password=$pwd&quot;);</span></pre></div>
 
 <p><span style='mso-bookmark:pdo'>The DSN mechanism is also supported: </span></p>
 
@@ -1167,7 +1167,7 @@ style='mso-bookmark:pdo'><span style='mso-tab-count:1'>???????? </span>$conn =&a
 solid #DDDDDD .75pt;padding:9.0pt 18.0pt 9.0pt 18.0pt;background:#EEEEEE'><pre
 style='background:#EEEEEE'><span style='mso-bookmark:pdo'><span
 style='mso-tab-count:1'>???????? </span>$conn = &amp;ADONewConnection('postgres');<span style='mso-spacerun:yes'>? </span><br>
-<span style='mso-tab-count:1'>???????? </span>$conn-&gt;PConnect('host=192.168.0.99 port=5432 dbname=mary');</span></pre></div>
+<span style='mso-tab-count:1'>???????? </span>$conn-&gt;PConnect('host=localhost port=5434 dbname=mary');</span></pre></div>
 
 <p><span style='mso-bookmark:pdo'>b. the classical 4 parameters:</span></p>
 

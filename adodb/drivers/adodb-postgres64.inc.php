@@ -693,7 +693,7 @@ a different OID if a database must be reloaded. */
 			if ($db)   $str .= " dbname=".$db;
 		}
 
-		//if ($user) $linea = "user=$user host=$linea password=$pwd dbname=$db port=5432";
+		//if ($user) $linea = "user=$user host=$linea password=$pwd dbname=$db port=5434";
 
 		if ($ctype === 1) { // persistent
 			$this->_connectionID = pg_pconnect($str);

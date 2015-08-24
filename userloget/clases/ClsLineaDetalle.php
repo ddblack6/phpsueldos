@@ -36,7 +36,7 @@
                      
                      echo '<script type="text/javascript">
 			alert("Este Detalle de Linea ya existe. Intente Ingresar otro Detalle..");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetNuevo.php";
+			 window.location="http://localhost/app/phpsueldosuserloget/FrmLineaDetNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -46,7 +46,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetNuevo.php");
+                            header("Refresh:0; url=http://localhost/app/phpsueldosuserloget/FrmLineaDetNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -59,7 +59,7 @@
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $codigo=0;
                 $var=0;
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetModif.php");
+                header("Refresh:0; url=http://localhost/app/phpsueldosuserloget/FrmLineaDetModif.php");
             }
        //
         ?>

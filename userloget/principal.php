@@ -3,7 +3,7 @@ if (!isset($_SESSION) ){session_start();}
 
 if(($_SESSION['nombre_usuario'])=='')
    {
-    header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/index.php"); 
+    header("Refresh:0; url=http://localhost/app/phpsueldosindex.php"); 
    }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if(($_SESSION['nombre_usuario'])=='')
 	<div class="header">
 	  <div class="header_resize">
                 <div class="logo">
-			<h1><a href="http://192.168.0.99/web/phpsueldos/userloget/principal.php"><span>INTN</span>- SUELDOS<br />
+			<h1><a href="http://localhost/app/phpsueldosuserloget/principal.php"><span>INTN</span>- SUELDOS<br />
 			<small>Instituto Nacional de Tecnologia Normalizacion y Metrologia</small></a></h1> 
 		</div>
               </br>
@@ -49,127 +49,127 @@ if(($_SESSION['nombre_usuario'])=='')
    <li><a href="#"><i class="icon-user"></i>CARGA DATOS</a>
    <ul class="sub-menu">
 		<li><a href="#">USUARIOS</a>
-                        <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmUsuarioNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmUsuarioModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmUsuarioElim.php">ELIMINAR</a></li>
+                        <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmUsuarioNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmUsuarioModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmUsuarioElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
 		<li><a href="#">FUNCIONARIOS</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmFuncionarioNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmFuncionarioModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmFuncionarioElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmFuncionarioNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmFuncionarioModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmFuncionarioElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 <li><a href="#">CATEGORÍAS</a>
-                        <ul><li><a  href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaElim.php">ELIMINAR</a></li>
+                        <ul><li><a  href="http://localhost/app/phpsueldosuserloget/FrmCategoriaNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCategoriaModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCategoriaElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
 		<li><a href="#">CARGO</a>
-                        <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCargoNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCargoModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCargoElim.php">ELIMINAR</a></li>
+                        <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmCargoNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCargoModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCargoElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
 		<li><a  href="#">ORGANISMO</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 <li><a  href="#">LINEA</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
 		<li><a href="#">TIPO DESCUENTOS</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmTipoDescuentoNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmTipoDescuentoModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmTipoDescuentoElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmTipoDescuentoNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmTipoDescuentoModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmTipoDescuentoElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 <li><a href="#">CATEGORIA FUNCIONARIO</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmCategoriaDetNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCategoriaDetModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmCategoriaDetElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 <li><a href="#">ORGANISMO FUNCIONARIO</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoDetNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoDetModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoDetElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoDetNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoDetModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmOrganismoDetElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 <li><a href="#">LINEA FUNCIONARIO</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetNuevo.php">NUEVO</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetModif.php">MODIFICAR</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetElim.php">ELIMINAR</a></li>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaDetNuevo.php">NUEVO</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaDetModif.php">MODIFICAR</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmLineaDetElim.php">ELIMINAR</a></li>
                         </ul>
                 </li>
                 </ul>
     </li>
    <li><a href="#"><i class="icon-money"></i>SUELDOS</a>
 		<ul class="sub-menu">
-                <li><a  href="http://192.168.0.99/web/phpsueldos/userloget/FrmGenerarSueldos.php">GENERAR SUELDOS</a>
+                <li><a  href="http://localhost/app/phpsueldosuserloget/FrmGenerarSueldos.php">GENERAR SUELDOS</a>
 		<li><a  href="#">REGISTRAR</a>
-                    <ul><li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmSalarioF10.php">FUENTE 10</a></li>
-                        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmSalarioF30.php">FUENTE 30</a>
+                    <ul><li><a href="http://localhost/app/phpsueldosuserloget/FrmSalarioF10.php">FUENTE 10</a></li>
+                        <li><a href="http://localhost/app/phpsueldosuserloget/FrmSalarioF30.php">FUENTE 30</a>
                     </ul>
-                <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo10.php">SUELDOS FUENTE 10</a></li>
-                <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo30.php">SUELDOS FUENTE 30</a></li>
-                <li><a href="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php">SUELDOS GENERAL</a></li>
+                <li><a href="http://localhost/app/phpsueldosuserloget/FrmConsultaSueldo10.php">SUELDOS FUENTE 10</a></li>
+                <li><a href="http://localhost/app/phpsueldosuserloget/FrmConsultaSueldo30.php">SUELDOS FUENTE 30</a></li>
+                <li><a href="http://localhost/app/phpsueldosuserloget/FrmConsultaSueldo.php">SUELDOS GENERAL</a></li>
                 </li>
 		</ul>
    </li>
   <li><a  href="#"><i class="icon-folder-close-alt"></i>IMPRESIONES</a>
   <ul class="sub-menu">
-  <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmGenerarReciboOrgan.php">GENERAR RECIBOS</a></li>    
-  <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmReciboFunc.php">IMPRIMIR RECIBO</a></li>
+  <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmGenerarReciboOrgan.php">GENERAR RECIBOS</a></li>    
+  <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmReciboFunc.php">IMPRIMIR RECIBO</a></li>
    <li><a href="#">SALARIO / RESUMEN</a>
     <ul>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoF10.php">SALARIO FUENTE 10</a></li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoF30.php">SALARIO FUENTE 30</a></li>
-    <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmOrganismos.php">POR ORGANISMOS</a></li>
-     <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoResumen.php">TOTAL GENERAL</a></li>
-     <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoResumenF10.php">TOTAL GENERAL FUENTE 10</a></li>
-     <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoResumenF30.php">TOTAL GENERAL FUENTE 30</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoF10.php">SALARIO FUENTE 10</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoF30.php">SALARIO FUENTE 30</a></li>
+    <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmOrganismos.php">POR ORGANISMOS</a></li>
+     <li><a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoResumen.php">TOTAL GENERAL</a></li>
+     <li><a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoResumenF10.php">TOTAL GENERAL FUENTE 10</a></li>
+     <li><a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoResumenF30.php">TOTAL GENERAL FUENTE 30</a></li>
     </ul>
        <li><a href="#">EXPORTAR A EXCEL</a>
     <ul>
-       <li><a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelF10.php">SALARIO FUENTE 10</a></li>
-       <li><a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelF30.php">SALARIO FUENTE 30</a></li>
-        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelTotal.php">TOTAL GENERAL</a></li>
+       <li><a href="http://localhost/app/phpsueldosuserloget/excel/InformeExcelF10.php">SALARIO FUENTE 10</a></li>
+       <li><a href="http://localhost/app/phpsueldosuserloget/excel/InformeExcelF30.php">SALARIO FUENTE 30</a></li>
+        <li><a href="http://localhost/app/phpsueldosuserloget/excel/InformeExcelTotal.php">TOTAL GENERAL</a></li>
     </ul>
    </li>
     <li><a href="#">GENERAR TXT</a>
     <ul>
-       <li><a href="http://192.168.0.99/web/phpsueldos/userloget/GenTXT/InformeTxt10.php">FUENTE 10</a></li>
-       <li><a href="http://192.168.0.99/web/phpsueldos/userloget/GenTXT/InformeTxt30.php">FUENTE 30</a></li>
-        <li><a href="http://192.168.0.99/web/phpsueldos/userloget/GenTXT/InformeTxtT.php">GENERAL</a></li>
+       <li><a href="http://localhost/app/phpsueldosuserloget/GenTXT/InformeTxt10.php">FUENTE 10</a></li>
+       <li><a href="http://localhost/app/phpsueldosuserloget/GenTXT/InformeTxt30.php">FUENTE 30</a></li>
+        <li><a href="http://localhost/app/phpsueldosuserloget/GenTXT/InformeTxtT.php">GENERAL</a></li>
     </ul>
    </li>
    </ul>
   </li>
   <li><a  href="#"><i class="icon-print"></i>CONSULTAS</a>
   <ul>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmReciboFecha.php">RECIBO POR FECHA</a></li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmOrganismosFecha.php">ORGANISMOS POR FECHA</a></li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmResumenFunc.php">FUNCIONARIO FECHA</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmReciboFecha.php">RECIBO POR FECHA</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmOrganismosFecha.php">ORGANISMOS POR FECHA</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmResumenFunc.php">FUNCIONARIO FECHA</a></li>
    <li><a href="">RESUMEN FECHA</a>
    <ul>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmResumenTotalFecha.php">RESUMEN TOTAL</a></li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmResumenF10Fecha.php">RESUMEN F10</a></li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmResumenF30Fecha.php">RESUMEN F30</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmResumenTotalFecha.php">RESUMEN TOTAL</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmResumenF10Fecha.php">RESUMEN F10</a></li>
+   <li><a href="http://localhost/app/phpsueldosuserloget/informes/FrmResumenF30Fecha.php">RESUMEN F30</a></li>
    </ul>
    </li>
-   <li><a href="http://192.168.0.99/web/phpsueldos/userloget/excel/FrmExcelFecha.php">EXCEL/FECHA</a>
+   <li><a href="http://localhost/app/phpsueldosuserloget/excel/FrmExcelFecha.php">EXCEL/FECHA</a>
     </li>
    </ul>
    </li>
-  <li><a  href="http://192.168.0.99/web/phpsueldos/logout.php"><i class="icon-warning-sign"></i>SALIR</a></li>
-  <li><a  href="http://192.168.0.99/web/phpsueldos/userloget/Manual de Usuario.pdf"><i class="icon-info-sign"></i>INFO</a></li>
+  <li><a  href="http://localhost/app/phpsueldoslogout.php"><i class="icon-warning-sign"></i>SALIR</a></li>
+  <li><a  href="http://localhost/app/phpsueldosuserloget/Manual de Usuario.pdf"><i class="icon-info-sign"></i>INFO</a></li>
   </ul>
   </nav>       
  </div><!--end mainWrap-->

@@ -71,8 +71,8 @@ $pdf->SetFillColor(224,235,255);
 $pdf->SetTextColor(0);
 
 //Connection and query
-$pregunta='dbname=dbsalario port=5432 user=postgres password=postgres';
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$pregunta='dbname=dbsalario port=5434 user=postgres password=postgres';
+$conectate=pg_connect("host=localhost port=5434 dbname=salario user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,'select car_cod,car_des from cargo');
 $numregs=pg_numrows($consulta);

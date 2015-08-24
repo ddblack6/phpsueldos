@@ -84,7 +84,7 @@ $pdf->SetFont('Arial','B',10);
 
 
 
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=localhost port=5434 dbname=salario user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by max(SAL.sal_cod)) as lineas,
                     max(Sal.usu_cod) as usu_cod,max(Sal.sal_cod)as sal_cod,max(Sal.fun_cod) as fun_cod,max(CONCAT(FUN.fun_nom,' ',FUN.fun_ape)) as nombres,max(to_char(SAL.sal_fecha,'dd/mm/yyyy')) as sal_fecha,

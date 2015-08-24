@@ -136,7 +136,7 @@
                     <input type="hidden" id="sal_neto" name="Nsal_neto" value="<?php if(empty ($rowP[14])){$value=0;}else{$value=$rowP[14];echo$value;}?>"/>  
                     <div align="center" id='submit' class='outerDiv'>
                     <input type="submit" name="submit" value="Guardar" onclik="" />
-                    <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
+                    <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://localhost/app/phpsueldosuserloget/principal.php'"/>  
                     <div class='clearfix'></div>
                     </div>
                     </form>
