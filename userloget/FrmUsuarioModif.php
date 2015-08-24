@@ -32,7 +32,7 @@
         }
         function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
            
         }
     </script>
@@ -103,7 +103,7 @@ $row = pg_fetch_array($result);
 						<div class='clearfix'></div>
                                                 <div align="center" id='submit' class='outerDiv'>
                                                 <input type="submit" name="submit" value="Guardar" />
-                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://localhost/app/phpsueldosuserloget/principal.php'"/>  
+                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
                                                 </div>
                                                 <div class='clearfix'></div>
                                                 

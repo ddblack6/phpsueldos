@@ -21,22 +21,22 @@
 		<link rel="stylesheet" href="twitter-signup.css" type="text/css" />
     <script>
         function RedirigirASO(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioASO.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioASO.php';
         }
         function RedirigirIPS(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioIPS.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioIPS.php';
         }
         function RedirigirJUD(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioJUD.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioJUD.php';
         }
         function RedirigirREP(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioREP.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioREP.php';
         }
         function RedirigirAUS(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioAUS.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioAUS.php';
         }
          function RedirigirPYT(){
-            window.location='http://localhost/app/phpsueldosuserloget/FrmModifSalarioPYT.php';
+            window.location='http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalarioPYT.php';
         }
     </script>
                 
@@ -151,7 +151,7 @@
             
             function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
     }
 </script>
 </html>

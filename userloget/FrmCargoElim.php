@@ -38,7 +38,7 @@
         }
         function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
            
         }
     </script>

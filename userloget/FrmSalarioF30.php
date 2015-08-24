@@ -435,7 +435,7 @@
         }
 </script>
                <div class='clearfix'></div>
-               <a href="http://localhost/app/phpsueldosuserloget/principal.php"><strong><H3>Volver al Menu Principal</H3></strong></a> <br>
+               <a href="http://192.168.0.99/web/phpsueldos/userloget/principal.php"><strong><H3>Volver al Menu Principal</H3></strong></a> <br>
                     <div id="twitter">
                       <FORM action="FrmSalarioF10.php" method="post">
 			<div id='name' class='outerDiv'>   
@@ -775,7 +775,7 @@
                      
                     <div align="center" id='submit' class='outerDiv'>
                     <input type="submit" name="submit" value="Guardar" onclik="" />
-                    <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://localhost/app/phpsueldosuserloget/principal.php'"/>  
+                    <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
                     <div class='clearfix'></div>
                     </div>
                     </form>
@@ -786,7 +786,7 @@
             
             function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
     }
 </script>
 

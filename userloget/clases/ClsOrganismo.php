@@ -33,7 +33,7 @@
                      
                       echo '<script type="text/javascript">
 			alert("El Organismo ya existe. Intente Ingresar otro Organismo..");
-			 window.location="http://localhost/app/phpsueldosuserloget/FrmOrganismoNuevo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -43,7 +43,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://localhost/app/phpsueldosuserloget/FrmOrganismoNuevo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -55,7 +55,7 @@
                 $var=0;
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
-                header("Refresh:0; url=http://localhost/app/phpsueldosuserloget/FrmOrganismoModif.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmOrganismoModif.php");
             }
        //
         ?>

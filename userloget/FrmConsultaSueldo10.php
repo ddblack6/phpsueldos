@@ -47,7 +47,7 @@
         }
         function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
            
         }
     </script>
@@ -81,7 +81,7 @@ if  (empty($_COOKIE["varMod"])){
  }  else
  {
      $valueMod = $_COOKIE["varMod"];
-     header('Location: http://localhost/app/phpsueldosuserloget/FrmModifSalario.php');
+     header('Location: http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalario.php');
      setcookie("varMod", $_COOKIE["varMod"], time()+12);
      
      
@@ -130,8 +130,21 @@ if  (empty($_COOKIE["varMod"])){
                        do {
                       $indice=$indice + 1;    
                        if ($row["ode_mon"]==''){$otrosDes=0;}else{$otrosDes=$row["ode_mon"];}
-                       echo "<tr><td>".$indice."</td><td>".number_format($row["lin_des"], 0, '', '.')."</td><td>".number_format($row["cin"], 0, '', '.')."</td><td>".$row["nombres"]."</td><td>".$row["sal_fecha"]."</td><td>".number_format($row["sueldobruto"], 0, '', '.')."</td><td>".number_format($row["sal_ips"], 0, '', '.')."</td><td>".number_format($row["sal_aus"], 0, '', '.')."</td><td>".number_format($row["sal_pyt"], 0, '', '.')."</td>
-                       <td>".number_format($row["sal_jud"], 0, '', '.')."</td><td>".number_format($row["sal_aso"], 0, '', '.')."</td><td>".number_format($row["sal_rep"], 0, '', '.')."</td><td>".$row["tde_des"]."</td><td>".number_format($otrosDes, 0, '', '.')."</td><td>".number_format($row["total_descuentos"]+$otrosDes, 0, '', '.')."</td><td>".number_format($row["sal_neto"], 0, '', '.')."</td>
+                       echo "<tr><td>".$indice."</td>
+                             <td>".number_format($row["lin_des"], 0, '', '.')."</td>
+                               <td>".number_format($row["cin"], 0, '', '.')."</td>
+                               <td>".$row["nombres"]."</td><td>".$row["sal_fecha"]."</td>
+                               <td>".number_format($row["sueldobruto"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_ips"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_aus"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_pyt"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_jud"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_aso"], 0, '', '.')."</td>
+                               <td>".number_format($row["sal_rep"], 0, '', '.')."</td>
+                               <td>".$row["tde_des"]."</td>
+                               <td>".number_format($otrosDes, 0, '', '.')."</td>
+                               <td>".number_format($row["total_descuentos"]+$otrosDes, 0, '', '.')."</td>
+                               <td>".number_format($row["sal_neto"], 0, '', '.')."</td>
                        <td><span class='editar' value='".$row["sal_cod"]."' , OnClick='Modificar(".$row["sal_cod"].");'>Editar</span></td><td><span class='editar' value='".$row["sal_cod"]."' , OnClick='Eliminar(".$row["sal_cod"].");'>Borrar</span></td></tr> \n"; 
                        } while ($row = pg_fetch_array($result)); 
                        echo "</table> \n"; 
@@ -229,8 +242,8 @@ if  (empty($_COOKIE["varMod"])){
           <div class='clearfix'></div>
           <div id="twitter">
           <a href="#top"><img src="img/up.png" title="Ir arriba" style="position: fixed; bottom: 50px; left: 6%;" /></a>
-          <a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoF10.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
-          <a href="http://localhost/app/phpsueldosuserloget/excel/InformeExcelF10.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoF10.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelF10.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
           </div> 
 </body>
     

@@ -82,8 +82,8 @@ $pdf->SetTextColor(0);
  if  (empty($_POST['txtfechahasta'])){$hastafecha=0;}else{$hastafecha=$_POST['txtfechahasta'];}
 //Connection and query
 
-$pregunta='dbname=dbsalario port=5434 user=postgres password=postgres';
-$conectate=pg_connect("host=localhost port=5434 dbname=salario user=postgres password=postgres"
+$pregunta='dbname=dbsalario port=5432 user=postgres password=postgres';
+$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
 
 

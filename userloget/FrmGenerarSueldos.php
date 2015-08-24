@@ -25,7 +25,7 @@
             include 'funciones.php';
              // si el registro es la pantalla nuevo
               conexionlocal();
-              $conectate=pg_connect("host=localhost port=5434 dbname=salario user=postgres password=postgres"
+              $conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
                     . "")or die ('Error al conectar a la base de datos');
             $consulta=pg_exec($conectate,"SELECT * from Salario where EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now()) and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
 //***********************************Consulta sumatoria de descuentos*****************************
@@ -35,7 +35,7 @@
 			{
 			echo '<script type="text/javascript">
 			alert("Sueldos del mes corriente ya ha sido Generado..!");
-			 window.location="http://localhost/app/phpsueldosuserloget/FrmConsultaSueldo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php";
 			 </script>';
 			}
 			 else{
@@ -54,7 +54,7 @@
                             on f.fun_cod=cd.fun_cod where f.fun_sit=true";
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
-                            header("Refresh:0; url=http://localhost/app/phpsueldosuserloget/FrmConsultaSueldo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
                            
 		}
                             

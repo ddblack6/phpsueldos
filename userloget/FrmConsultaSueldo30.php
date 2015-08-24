@@ -47,7 +47,7 @@
         }
         function Cancelar(){
              
-            location.href("http://localhost/app/phpsueldosprincipal.php")
+            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
            
         }
     </script>
@@ -81,7 +81,7 @@ if  (empty($_COOKIE["varMod"])){
  }  else
  {
      $valueMod = $_COOKIE["varMod"];
-     header('Location: http://localhost/app/phpsueldosuserloget/FrmModifSalario.php');
+     header('Location: http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalario.php');
      setcookie("varMod", $_COOKIE["varMod"], time()+12);
      
      
@@ -230,8 +230,8 @@ if  (empty($_COOKIE["varMod"])){
           <div class='clearfix'></div>
           <div id="twitter">
           <a href="#top"><img src="img/up.png" title="Ir arriba" style="position: fixed; bottom: 50px; left: 6%;" /></a>
-          <a href="http://localhost/app/phpsueldosuserloget/informes/InformeSueldoF30.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
-          <a href="http://localhost/app/phpsueldosuserloget/excel/InformeExcelF30.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoF30.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelF30.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
           </div> 
 </body>
     
