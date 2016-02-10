@@ -42,13 +42,14 @@ function Header()
     if  (empty($_POST['txtFecha'])){$fecha=0;}else{$fecha=$_POST['txtFecha'];}
    
     $mes=substr($fecha, 5, 2);
+	$anho=substr($fecha,0, 4);
   
     
 if($nroci==0)
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmReciboFecha.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmReciboFecha.php";
 			 </script>';
 			}
 //Connection and query
@@ -83,7 +84,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
                     INNER JOIN categoria CAT on CAT.cat_cod=CATDES.cat_cod
                     where SAL.fun_cod=FUN.fun_cod and FUN.fun_ci='$nroci' 
                     and EXTRACT(MONTH FROM sal_fecha)=$mes
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) group by FUN.fun_cod order by nombres ");
+                    and EXTRACT(YEAR FROM sal_fecha)=$anho group by FUN.fun_cod order by nombres ");
 //***********************************Consulta sumatoria de descuentos*****************************
 
  
@@ -94,7 +95,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmReciboFecha.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmReciboFecha.php";
 			 </script>';
         }
         

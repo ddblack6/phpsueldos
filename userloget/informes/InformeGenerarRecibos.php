@@ -89,7 +89,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/informes/FrmGenerarReciboOrgan.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmGenerarReciboOrgan.php";
 			 </script>';
         }
     //Build table

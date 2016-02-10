@@ -31,7 +31,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
+            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
         }
         function checkEstado(form){
               if (form.checksituacion=='t')
@@ -113,13 +113,13 @@ $row = pg_fetch_array($result);
                                                         <div id='name' class='outerDiv'>
 							<label for="txtFecha">Fecha:</label> 
 							<input type="date" name="txtFecha" value="<?php echo $row['cad_fec'];?>" required  /> 
-							<div class='message' id='nameDiv'> Ingrese número de CI </div>
+							<div class='message' id='nameDiv'> Ingrese fecha </div>
                                                         </div>
                                                         <div class='clearfix'></div>
 						<div class='clearfix'></div>
                                                 <div align="center" id='submit' class='outerDiv'>
                                                 <input type="submit" name="submit" value="Guardar" />
-                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
+                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos2015/userloget/principal.php'"/>  
                                                 </div>
                                                 <div class='clearfix'></div>
                             </form>       
@@ -132,7 +132,7 @@ $row = pg_fetch_array($result);
                   // include './funciones.php';
                    //hace una conexion local
                      // conexionlocal();
-                     $result = pg_query("SELECT row_number()over (partition by 0 order by FUNC.fun_cod) as   lineas,FUNC.fun_cod,CAT.cat_des,CAT.cat_nom,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(CATDET.cad_fec,'DD/MM/YYYY')  as cad_fec FROM funcionario FUNC, categoria_detalle CATDET,categoria CAT  where FUNC.fun_cod=CATDET.fun_cod and CATDET.cat_cod=CAT.cat_cod order by FUN_COD"); 
+                     $result = pg_query("SELECT row_number()over (partition by 0 order by FUNC.fun_cod) as   lineas,FUNC.fun_cod,CAT.cat_des,CAT.cat_nom,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(CATDET.cad_fec,'DD/MM/YYYY')  as cad_fec FROM funcionario FUNC, categoria_detalle CATDET,categoria CAT  where FUNC.fun_cod=CATDET.fun_cod and FUNC.fun_sit='t' and CATDET.cat_cod=CAT.cat_cod order by FUN_COD"); 
                     if ($row = pg_fetch_array($result)){ 
                        echo "<table style='margin: 6 auto;' heigth=100% width=80% bgcolor='white' border='5' bordercolor='black' cellspacing='3' cellpadding='3' onclick='Refrescar();'> \n"; 
                         echo " <caption>Modificar Detalles Categorías (Presione Ctrl+F para buscar)</caption>";

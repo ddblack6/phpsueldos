@@ -32,7 +32,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
+            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
         }
         function checkEstado(form){
               if (form.checksituacion=='t')
@@ -120,7 +120,7 @@ $row = pg_fetch_array($result);
 						<div class='clearfix'></div>
                                                 <div align="center" id='submit' class='outerDiv'>
                                                 <input type="submit" name="submit" value="Guardar" />
-                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos/userloget/principal.php'"/>  
+                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos2015/userloget/principal.php'"/>  
                                                 </div>
                                                 <div class='clearfix'></div>
                             </form>       
@@ -133,7 +133,7 @@ $row = pg_fetch_array($result);
                   // include './funciones.php';
                    //hace una conexion local
                      // conexionlocal();
-                     $result = pg_query("SELECT row_number()over (partition by 0 order by FUNC.fun_cod) as   lineas,FUNC.fun_cod,lin.lin_cod,lin.lin_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(lindet.lin_fec,'DD/MM/YYYY')  as lin_fec FROM funcionario FUNC, linea_detalle lindet,linea lin  where FUNC.fun_cod=lindet.fun_cod and lindet.lin_cod=lin.lin_cod order by lin.lin_cod"); 
+                     $result = pg_query("SELECT row_number()over (ORDER BY lin.lin_cod asc) as   lineas,FUNC.fun_cod,lin.lin_cod,lin.lin_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(lindet.lin_fec,'DD/MM/YYYY')  as lin_fec FROM funcionario FUNC, linea_detalle lindet,linea lin  where FUNC.fun_cod=lindet.fun_cod and lindet.lin_cod=lin.lin_cod order by lin.lin_cod"); 
                     if ($row = pg_fetch_array($result)){ 
                        echo "<table style='margin: 6 auto;' heigth=100% width=80% bgcolor='white' border='5' bordercolor='black' cellspacing='3' cellpadding='3' onclick='Refrescar();'> \n"; 
                         echo " <caption>Modificar Detalles Lineas (Presione Ctrl+F para buscar)</caption>";

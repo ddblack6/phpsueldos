@@ -32,14 +32,14 @@ $pwd= $_REQUEST['password'];
 	{
 		echo '<script type="text/javascript">
                          alert("Nombre de usuario o Password no valido..!");
-			 window.location="http://192.168.0.99/web/phpsueldos/index.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/index.php";
                       </script>';
 	}
 	else
 	{
             $_SESSION["nombre_usuario"] = $row['usu_nom'];
             $_SESSION["codigo_usuario"] = $row['usu_cod'];
-            header("Location:http://192.168.0.99/web/phpsueldos/userloget/principal.php");
+            header("Location:http://192.168.0.99/web/phpsueldos2015/userloget/principal.php");
 	} 
 	exit;
 ?>

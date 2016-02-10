@@ -35,7 +35,7 @@
 			{
 			echo '<script type="text/javascript">
 			alert("Sueldos del mes corriente ya ha sido Generado..!");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php";
 			 </script>';
 			}
 			 else{
@@ -54,7 +54,7 @@
                             on f.fun_cod=cd.fun_cod where f.fun_sit=true";
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
                            
 		}
                             

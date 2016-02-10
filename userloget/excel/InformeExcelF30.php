@@ -89,10 +89,10 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
                     ,COALESCE(sum(DES.ode_mon),0) as ode_mon
                     ,'Otros Descuentos' as tde_des
                     ,COALESCE(max(SAL.sal_neto),0) as sal_neto 
-		    ,COALESCE((max(SAL.sal_ips)+ max(SAL.sal_aus)+max(SAL.sal_pyt)+max(SAL.sal_jud)+max(SAL.sal_aso)+max(SAL.sal_rep)),0) as total_descuentos
-		    ,max(car.car_des) as cargo
-		    ,max(cat.cat_des) as categoria
-		    ,max(lin.lin_des) as nrolinea
+					,COALESCE((max(SAL.sal_ips)+ max(SAL.sal_aus)+max(SAL.sal_pyt)+max(SAL.sal_jud)+max(SAL.sal_aso)+max(SAL.sal_rep)),0) as total_descuentos
+					,max(car.car_des) as cargo
+					,max(cat.cat_des) as categoria
+					,max(lin.lin_des) as nrolinea
                     from Salario SAL
                     LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
                     LEFT OUTER JOIN tipo_descuento TIPDES

@@ -36,7 +36,7 @@
                      
                      echo '<script type="text/javascript">
 			alert("Este Detalle de Linea ya existe. Intente Ingresar otro Detalle..");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetNuevo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaDetNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -46,20 +46,20 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetNuevo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaDetNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
         elseif ($var==2){
                 
                 $query ='';
-                $query = "update linea_detalle set fun_cod= $codfuncionario,lin_cod=$codcategoria,lin_fec='$fecha' where fun_cod= ".$codigo.";";
+                $query = "update linea_detalle set fun_cod= $codfuncionario,lin_cod=$codcategoria,lin_fec='$fecha' where fun_cod= ".$codfuncionario.";";
                 $codacategoria=0;$codfuncionario=0;$fecha='';$codigo=0;
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $codigo=0;
                 $var=0;
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmLineaDetModif.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaDetModif.php");
             }
        //
         ?>

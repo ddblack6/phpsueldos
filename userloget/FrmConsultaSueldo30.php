@@ -47,7 +47,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
+            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
            
         }
     </script>
@@ -81,7 +81,7 @@ if  (empty($_COOKIE["varMod"])){
  }  else
  {
      $valueMod = $_COOKIE["varMod"];
-     header('Location: http://192.168.0.99/web/phpsueldos/userloget/FrmModifSalario.php');
+     header('Location: http://192.168.0.99/web/phpsueldos2015/userloget/FrmModifSalario.php');
      setcookie("varMod", $_COOKIE["varMod"], time()+12);
      
      
@@ -159,46 +159,173 @@ if  (empty($_COOKIE["varMod"])){
                         and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
                       
                       //total de sueldo bruto
-                       $bruto=pg_query("select sum(c.cat_nom)as sueldobruto from salario s,categoria c,categoria_detalle cd ,funcionario fun where  fun.fun_cod=s.fun_cod and fun.fun_fuente='30'
-                          and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())
-                    and c.cat_cod=cd.cat_cod and cd.fun_cod=s.fun_cod");
+                       $bruto=pg_query("SELECT sum(cat.cat_nom) as sueldobruto
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
+                    and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
+                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())   ");
                       $row00=pg_fetch_array($bruto);
+
                       //total de sueldo neto
-                      $neto=pg_query("select sum(s.sal_neto)as saldoneto from salario s, funcionario fun where  fun.fun_cod=s.fun_cod and fun.fun_fuente='30' 
+                      $neto=pg_query("SELECT sum(SAL.sal_neto) as saldoneto
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
+                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())   ");
                       $row1=pg_fetch_array($neto);
+
                       //total de IPS
-                      $totalIPS=pg_query("select sum(s.sal_ips) as sal_ips from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+                      $totalIPS=pg_query("SELECT sum(SAL.sal_ips) as sal_ips
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
+                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) ");
                       $row2=pg_fetch_array($totalIPS);
+
                       //total ausencia
-                      $totalAus=pg_query("select sum(s.sal_aus) as ausencia from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+                      $totalAus=pg_query(" SELECT  sum(SAL.sal_aus) as ausencia 
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
                     and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
                       $row3=pg_fetch_array($totalAus);
+
                       //para permiso y llegadas tardias
-                      $totalPermiso=pg_query("select sum(s.sal_pyt) as permiso from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+                      $totalPermiso=pg_query(" SELECT  sum(SAL.sal_pyt) as permiso
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
                     and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
                       $row4=pg_fetch_array($totalPermiso);
-                      //para descuento judicialez
-                      $totalJudiciales=pg_query("select sum(s.sal_jud) as judiciales from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+
+                      //para descuento judiciales
+                      $totalJudiciales=pg_query(" SELECT  sum(SAL.sal_jud) as judiciales
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
                     and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
                       $row5=pg_fetch_array($totalJudiciales);
+
                       //para descuento ASO
-                      $totalASO=pg_query("select sum(s.sal_aso) as aso from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+                      $totalASO=pg_query("SELECT  sum(SAL.sal_aso) as aso
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
                     and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
                       $row6=pg_fetch_array($totalASO);
+
                       //para descuento reposo
-                      $totalReposo=pg_query("select sum(s.sal_rep) as reposo from salario s,funcionario fun where s.fun_cod=fun.fun_cod and fun.fun_fuente='30' 
+                      $totalReposo=pg_query("  SELECT    sum(SAL.sal_rep) as reposo
+                   from Salario SAL
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    where SAL.fun_cod=FUN.fun_cod and FUN.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())");
+                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())               ");
                       $row7=pg_fetch_array($totalReposo);
+
                       //para total descuentos(otros)
                       $totalOdescuentos=pg_query("select sum(d.ode_mon) as descuentos from descuento d, funcionario fun,salario sal where sal.sal_cod=d.sal_cod and fun.fun_cod=sal.fun_cod and fun.fun_fuente='30' 
                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
@@ -230,8 +357,8 @@ if  (empty($_COOKIE["varMod"])){
           <div class='clearfix'></div>
           <div id="twitter">
           <a href="#top"><img src="img/up.png" title="Ir arriba" style="position: fixed; bottom: 50px; left: 6%;" /></a>
-          <a href="http://192.168.0.99/web/phpsueldos/userloget/informes/InformeSueldoF30.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
-          <a href="http://192.168.0.99/web/phpsueldos/userloget/excel/InformeExcelF30.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos2015/userloget/informes/InformeSueldoF30.php"><img src="img/boton_pdf_descarga.png" title="Enviar a PDF" style="position:center; bottom: 50px; left: 6%;" /></a>
+          <a href="http://192.168.0.99/web/phpsueldos2015/userloget/excel/InformeExcelF30.php"><img src="img/btnexcel.jpg" title="Enviar a Excel" style="position:absolute; bottom: 50px; left: 95%;" /></a>
           </div> 
 </body>
     

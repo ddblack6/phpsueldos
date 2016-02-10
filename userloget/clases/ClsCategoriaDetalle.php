@@ -36,7 +36,7 @@
                      
                       echo '<script type="text/javascript">
 			alert("El detalle ya existe. Intente Ingresar otro Detalle de Categoria..");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetNuevo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaDetNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -46,7 +46,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetNuevo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaDetNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -59,7 +59,7 @@
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $codigo=0;
                 $var=0;
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmCategoriaDetModif.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaDetModif.php");
             }
        //
         ?>

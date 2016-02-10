@@ -77,7 +77,7 @@ include './funciones.php';
                   // include './funciones.php';
                    //hace una conexion local
                      conexionlocal();
-                      $result = pg_query("SELECT row_number()over (partition by 0 order by FUNC.fun_cod) as   lineas, FUNC.fun_cod,ORG.org_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(ORGDET.ord_fec,'DD/MM/YYYY')  as ord_fec FROM funcionario FUNC, organismo_detalle ORGDET,organismo ORG  where FUNC.fun_cod=ORGDET.fun_cod and ORGDET.org_cod=ORG.org_cod order by FUN_COD"); 
+                      $result = pg_query("SELECT row_number()over (partition by 0 order by ORG.org_cod) as   lineas, FUNC.fun_cod,ORG.org_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(ORGDET.ord_fec,'DD/MM/YYYY')  as ord_fec FROM funcionario FUNC, organismo_detalle ORGDET,organismo ORG  where FUNC.fun_cod=ORGDET.fun_cod and FUNC.fun_sit='t' and ORGDET.org_cod=ORG.org_cod order by ORG.org_cod"); 
                     if ($row = pg_fetch_array($result)){ 
                        echo "<table style='margin: 6 auto;' heigth=100% width=80% bgcolor='white' border='5' bordercolor='black' cellspacing='3' cellpadding='3' onclick='Refrescar();'> \n"; 
                        echo " <caption>Eliminar Organismos Detalles (Presione Ctrl+F para buscar)</caption>";

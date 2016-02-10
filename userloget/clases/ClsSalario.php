@@ -52,7 +52,7 @@
                      
                      echo '<script type="text/javascript">
 			alert("El Sueldo del Funcionario ya ha sido generado..!");
-			 window.location="http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php";
+			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php";
 			 </script>';
                        
                       }else{
@@ -105,7 +105,7 @@
                                 //ejecucion del query
                                 $ejecucion = pg_query($query)or die('Error al realizar la carga'); 
                                 }
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
                             }
          }
            //si el  registro es modificar ASO.
@@ -126,7 +126,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                 header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php"); 
+                 header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php"); 
         }
                  //si el  registro es modificar IPS.
         elseif ($var==3){
@@ -146,7 +146,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
         }
         //si el  registro es modificar descuendo Judicial.
         elseif ($var==4){
@@ -166,7 +166,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==5){
                 conexionlocal();
@@ -185,7 +185,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==6){
                 conexionlocal();
@@ -206,7 +206,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==7){
                 conexionlocal();
@@ -228,7 +228,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
         }
 //*********************************************************************************************************************
 //esto ya es parte de tipo descuento
@@ -261,10 +261,10 @@
                                 //ejecucion del query
                                 $ejecucion = pg_query($query)or die('Error al realizar la carga'); 
                                 }
-         //  header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/FrmConsultaSueldo.php");                 
+         //  header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");                 
             
             else{ 
-             header("Refresh:0; url=http://192.168.0.99/web/phpsueldos/userloget/principal.php");
+             header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/principal.php");
              
              }
        

@@ -39,7 +39,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos/principal.php")
+            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
            
         }
     </script>
@@ -53,7 +53,7 @@ include './funciones.php';
     try{
     $codigo = $_COOKIE["var2"];
     setcookie("var2", $_COOKIE["var2"], time()+12);
-    $query = "delete from linea_detalle where lin_cod= ".$codigo.";"; 
+    $query = "delete from linea_detalle where fun_cod= ".$codigo.";"; 
     $ejecucion = pg_query($query)or die('Error Al Eliminar el Dato');
     $codigo=0;
     }  catch (ExceptionType $e){
@@ -75,13 +75,13 @@ include './funciones.php';
                   // include './funciones.php';
                    //hace una conexion local
                      conexionlocal();
-                      $result = pg_query("SELECT row_number()over (partition by 0 order by FUNC.fun_cod) as   lineas,FUNC.fun_cod,lin.lin_cod,lin.lin_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(lindet.lin_fec,'DD/MM/YYYY')  as lin_fec FROM funcionario FUNC, linea_detalle lindet,linea lin  where FUNC.fun_cod=lindet.fun_cod and lindet.lin_cod=lin.lin_cod order by lin.lin_cod"); 
+                      $result = pg_query("SELECT row_number()over (ORDER BY lin.lin_cod asc) as   lineas,FUNC.fun_cod,lin.lin_cod,lin.lin_des,FUNC.fun_ci,FUNC.fun_nom,FUNC.fun_ape,to_char(lindet.lin_fec,'DD/MM/YYYY')  as lin_fec FROM funcionario FUNC, linea_detalle lindet,linea lin  where FUNC.fun_cod=lindet.fun_cod and lindet.lin_cod=lin.lin_cod order by lin.lin_cod"); 
                     if ($row = pg_fetch_array($result)){ 
                        echo "<table style='margin: 6 auto;' heigth=100% width=80% bgcolor='white' border='5' bordercolor='black' cellspacing='3' cellpadding='3' onclick='Refrescar();'> \n"; 
                         echo " <caption>Eliminar Linea Detalles (Presione Ctrl+F para buscar)</caption>";
                        echo "<th>Línea</th><th>Código</th><th>Linea</th><th>C.I. Nº</th><th>Nombre</th><th>Apellido</th><th>Fecha Categoría</th><th>Eliminar</th> \n"; 
                        do {
-                            echo "<tr><td>".$row["lineas"]."</td><td>".$row["fun_cod"]."</td><td>".$row["lin_des"]."</td><td>".$row["fun_ci"]."</td><td>".$row["fun_nom"]."</td><td>".$row["fun_ape"]."</td><td>".$row["lin_fec"]."</td><td><span class='editar' value='".$row["lin_cod"]."' , OnClick='Eliminar(".$row["lin_cod"].");'>Borrar</span></td></tr> \n"; 
+                            echo "<tr><td>".$row["lineas"]."</td><td>".$row["fun_cod"]."</td><td>".$row["lin_des"]."</td><td>".$row["fun_ci"]."</td><td>".$row["fun_nom"]."</td><td>".$row["fun_ape"]."</td><td>".$row["lin_fec"]."</td><td><span class='editar' value='".$row["lin_cod"]."' , OnClick='Eliminar(".$row["fun_cod"].");'>Borrar</span></td></tr> \n"; 
                        } 
                        while ($row = pg_fetch_array($result)); 
                        echo "</table> \n"; 

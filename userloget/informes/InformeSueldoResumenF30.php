@@ -96,25 +96,29 @@ $consulta2=pg_exec($conectate,"SELECT
     sum(DES.ode_mon)as descuentos,
     sum(SAL.sal_neto) as totalneto
     from Salario SAL
-    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
-    INNER JOIN funcionario FUN 
-    on SAl.fun_cod=FUN.fun_cod 
-    LEFT OUTER JOIN tipo_descuento TIPDES
-    on TIPDES.tde_cod=DES.tde_cod
-    INNER JOIN categoria_detalle catdet
-    on sal.fun_cod= catdet.fun_cod
-    INNER JOIN categoria cat
-    on cat.cat_cod=catdet.cat_cod
-    INNER JOIN organismo_detalle orgdet
-    on sal.fun_cod= orgdet.fun_cod
-    INNER JOIN organismo org
-    on org.org_cod=orgdet.org_cod
-    where SAL.fun_cod=FUN.fun_cod
-    and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
-    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) 
-    and FUN.fun_fuente='30'
-    group by org.org_des
-    order by organizacion");
+                    LEFT OUTER JOIN descuento DES on (DES.sal_cod=SAL.sal_cod)  
+                    LEFT OUTER JOIN tipo_descuento TIPDES
+                    on TIPDES.tde_cod=DES.tde_cod
+                    INNER JOIN funcionario FUN 
+                    on SAl.fun_cod=FUN.fun_cod
+                    INNER JOIN categoria_detalle catdet
+                    on sal.fun_cod= catdet.fun_cod
+                    INNER JOIN categoria cat
+                    on cat.cat_cod=catdet.cat_cod
+                    INNER JOIN linea_detalle lindet
+                    on sal.fun_cod= lindet.fun_cod
+                    INNER JOIN linea lin
+                    on lindet.lin_cod=lin.lin_cod
+                    INNER JOIN organismo_detalle orgdet
+		    on sal.fun_cod= orgdet.fun_cod
+		    INNER JOIN organismo org
+		    on org.org_cod=orgdet.org_cod
+                    where SAL.fun_cod=FUN.fun_cod
+		    and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
+		    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) 
+		    and FUN.fun_fuente='30'
+		    group by org.org_des
+		    order by organizacion");
 
 $numregs2=pg_numrows($consulta2);
 
