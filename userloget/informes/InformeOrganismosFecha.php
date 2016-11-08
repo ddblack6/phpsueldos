@@ -104,13 +104,14 @@ if  (empty($_POST['txtNombreOrganismo'])){$codigo=0;}else{$codigo=$_POST['txtNom
 if  (empty($_POST['txtFecha'])){$fecha=0;}else{$fecha=$_POST['txtFecha'];}
 if  (empty(  $_POST['txtRadioFuente'])){$fuenteNumero='30' ;}else{$fuenteNumero= '10';}
   $mes=substr($fecha, 5, 2);
+   $anho=substr($fecha, 0, 4);
 //------------------------------------------------------------------------------      
 $pdf->AddPage('L', 'Legal');
 $pdf->AliasNbPages();
 $pdf->SetFont('Arial','B',10);
 $pdf->SetX(20);
 //Set font and colors
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by max(SAL.sal_cod)) as lineas,
                     max(Sal.usu_cod) as usu_cod,max(Sal.sal_cod)as sal_cod,max(Sal.fun_cod) as fun_cod,max(CONCAT(FUN.fun_nom,' ',FUN.fun_ape)) as nombres,max(to_char(SAL.sal_fecha,'dd/mm/yyyy')) as sal_fecha,
@@ -144,7 +145,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
                     and ORG.org_cod='$codigo'
                     and FUN.fun_fuente= '$fuenteNumero'
                     and EXTRACT(MONTH FROM sal_fecha)=$mes
-                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) 
+                    and EXTRACT(YEAR FROM sal_fecha)= $anho
                     group by FUN.fun_cod order by nrolinea,FUN.fun_nom");
 
 $numregs=pg_numrows($consulta);
@@ -181,7 +182,7 @@ while($i<$numregs)
     $pdf->Cell(13,5,number_format($nrolinea, 0, '', '.'),1,0,'C',$fill);
     $pdf->Cell(45,5,$cargo,1,0,'C',$fill);
     $pdf->Cell(15,5,$cedula,1,0,'C',$fill);
-    $pdf->Cell(57,5,$funcionario,1,0,'L',$fill);
+    $pdf->Cell(57,5,utf8_decode($funcionario),1,0,'L',$fill);
     $pdf->Cell(15,5,utf8_decode($categria),1,0,'C',$fill);
     $pdf->Cell(20,5,number_format($sueldobruto, 0, '', '.'),1,0,'C',$fill);
     $pdf->Cell(15,5,number_format($IPS, 0, '', '.'),1,0,'C',$fill);
@@ -235,7 +236,7 @@ $consulta2=pg_exec($conectate,"SELECT '    ' as lineas,
     and ORG.org_cod='$codigo'
 	and FUN.fun_fuente= '$fuenteNumero'
     and EXTRACT(MONTH FROM sal_fecha)=$mes
-    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now()) group by ORG.org_cod");
+    and EXTRACT(YEAR FROM sal_fecha)= $anho group by ORG.org_cod");
 
 $numregs2=pg_numrows($consulta2);
 

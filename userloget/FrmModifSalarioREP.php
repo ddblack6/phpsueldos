@@ -37,34 +37,54 @@
         //calculamos el descuento de reposo//50% descuenta INTN y 50% IPS
         //estos valores pueden variar en dias y horas..se paga mitad y mitad.
         function DescuentoReposo(){
-            
+			//HASTA ACA SE ACTUALIZO CARGANDO EL IPS ANTERIOR
              //recuperamos el valor descuento reposo anterior
              var descuentoReposo=document.getElementById("sal_repaux").value;
-           
              //recuperamos el sueldo neto del input
              var SueldoNeto=document.getElementById('sueldoNeto').value;
-             //si anteriormente ya tenia un valor, debe reestablecer
-             if(descuentoReposo > 0)
-                 {
-                 var suma=parseFloat(SueldoNeto) + parseFloat(descuentoReposo);
-                 document.getElementById("sueldoNeto").value=suma;
-                }
-            
-             var SaldoBrutoIni=document.getElementById('sueldoBruto').value;
-             //calcula el jpornal diario
-             var jornal=SaldoBrutoIni/30;
+			 //recuperamos el sueldo bruto
+			 var SaldoBrutoIni=document.getElementById('sueldoBruto').value;
+			 	  //calculamos el ips antiguo
+			var ipsantiguo=parseInt(SaldoBrutoIni*9/100);
+		
+			 //calcula el jpornal diario
+            var jornal=parseInt(SaldoBrutoIni/30);
+			//restaurar con el ips anterior..se debe sumar
+			var actualizarneto=parseInt(SueldoNeto) + parseInt(ipsantiguo);
+			
+			document.getElementById("sueldoNeto").value=actualizarneto;
+		
+			//-------------------------------------------------------------------------------
+			
+			 //ACA SE CALCULO LOS DESCUENTOS
+			
              //obtiene dias de permisos/llegada tardia
              var dias= document.getElementById('DiaReposo').value;
              //descuento por dia de 50 %
              var descuentoINTN=(jornal/2);
-             document.getElementById("sal_rep").value=(descuentoINTN*dias);
-             //Actualiza el neto a cobrar
-             var SaldoNeto= document.getElementById('sueldoNeto').value;
-             document.getElementById("sueldoNeto").value=SaldoNeto-(descuentoINTN*dias);
-             //guardamos el valor de salario neto(esto se actualizara con cada descuento)
-         var sueldoneto=document.getElementById('sueldoNeto').value;
-         document.getElementById("sal_neto").value=sueldoneto;
-        
+             document.getElementById("sal_rep").value=parseInt(descuentoINTN*dias);
+			var descuentototaldias=parseInt(descuentoINTN*dias);
+			
+		
+			 //---------------------DESCONTAMOS EL MONTO POR REPOSO---------------------------------
+             var sueldoneto= document.getElementById('sueldoNeto').value;
+			
+             document.getElementById("sueldoNeto").value=(sueldoneto - descuentototaldias);
+			 
+			 //---------------------CALCULAMOS EL NUEVO IPS----------------------------------------------
+             
+			
+			var netoparaIPS=SaldoBrutoIni -descuentototaldias;
+			var ipsnuevo=parseInt((netoparaIPS*9)/100);
+			document.getElementById("Nsal_ips_rep").value=ipsnuevo;
+			
+			//------------------------RESTAMOS EL NETO ACTUAL EL NUEVO IPS----------------------------------------------
+			var neto=document.getElementById("sueldoNeto").value;
+			var mostrarNeto=neto-ipsnuevo;
+			document.getElementById("sueldoNeto").value=mostrarNeto;
+			//de la base de datos
+			document.getElementById("sal_neto").value=(mostrarNeto);
+			
         }
         
        
@@ -137,6 +157,7 @@
                     <label for="txtSueldoNeto">Sueldo Neto:</label> 
                     <input type="number" name="txtSueldoNeto" step="0" style="background-color:#ff0 " id="sueldoNeto" readonly="true"  value="<?php if(empty ($rowP[14])){$value=0;}else{$value=$rowP[14];echo $value;}?>" required  /> 
                     </div>
+					
                     <div class='clearfix'></div>
                     </br></br>
               <table>
@@ -171,6 +192,7 @@
                     <input type="hidden" id="sal_repaux" name="Nsal_repaux" value="<?php if(empty ($rowP[13])){$value=0;}else{$value=$rowP[13];echo $value;}?>"/>
                     <input type="hidden" id="sal_rep" name="Nsal_rep"/>
                     <input type="hidden" id="sal_neto" name="Nsal_neto" value="<?php if(empty ($rowP[14])){$value=0;}else{$value=$rowP[14];echo $value;}?>" >
+					<input type="hidden" name="Nsal_ips_rep" id="Nsal_ips_rep"/> 
                     <div align="center" id='submit' class='outerDiv'>
                     <input type="submit" name="submit" value="Guardar" onclik="" />
                     <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos2015/userloget/principal.php'"/>  

@@ -34,7 +34,7 @@
                      
                        echo '<script type="text/javascript">
 			alert("Esta Linea ya existe. Intente Ingresar otra Linea..");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaNuevo.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmLineaNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -44,7 +44,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaNuevo.php");
+                            header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmLineaNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -56,7 +56,7 @@
                 $var=0;
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmLineaModif.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmLineaModif.php");
             }
        //
         ?>

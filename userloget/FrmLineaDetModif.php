@@ -32,7 +32,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
+            location.href("http://aplicaciones.intn.gov.py/web/phpsueldos2016/principal.php")
         }
         function checkEstado(form){
               if (form.checksituacion=='t')
@@ -120,7 +120,7 @@ $row = pg_fetch_array($result);
 						<div class='clearfix'></div>
                                                 <div align="center" id='submit' class='outerDiv'>
                                                 <input type="submit" name="submit" value="Guardar" />
-                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos2015/userloget/principal.php'"/>  
+                                                <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/principal.php'"/>  
                                                 </div>
                                                 <div class='clearfix'></div>
                             </form>       

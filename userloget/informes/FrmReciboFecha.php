@@ -50,7 +50,7 @@
                             </div>
                              <div class='clearfix'></div>
                             <input type="submit" name="submit" value="Generar" />
-                            <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://192.168.0.99/web/phpsueldos2015/userloget/principal.php'"/>  
+                            <input type="button" name="cancel" value="Cancelar" onclick="window.location='http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/principal.php'"/>  
                     
                             
                             <div class='clearfix'></div>

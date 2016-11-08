@@ -75,7 +75,7 @@ $pdf->AddPage('L', 'legal');
 $pdf->SetFont('Arial','',6);
 
 //Connection and query
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by max(cat.cat_cod) ) as lineas,
                     max(Sal.usu_cod) as usu_cod
@@ -158,7 +158,7 @@ while($i<$numregs)
     $pdf->Cell(13,5,$nrolinea,1,0,'C',$fill);
     $pdf->Cell(45,5,$cargo,1,0,'C',$fill);
     $pdf->Cell(15,5,$cedula,1,0,'C',$fill);
-    $pdf->Cell(57,5,$funcionario,1,0,'L',$fill);
+    $pdf->Cell(57,5,utf8_decode($funcionario),1,0,'L',$fill);
     $pdf->Cell(15,5,utf8_decode($categria),1,0,'C',$fill);
     $pdf->Cell(20,5,number_format($sueldobruto, 0, '', '.'),1,0,'C',$fill);
     $pdf->Cell(15,5,number_format($IPS, 0, '', '.'),1,0,'C',$fill);

@@ -43,11 +43,11 @@ if($nroci==0)
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmReciboFunc.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/informes/FrmReciboFunc.php";
 			 </script>';
 			}
 //Connection and query
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 /*
  * aqui realizamos la consulta y cargamos los datos en valores..
@@ -89,7 +89,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmReciboFunc.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/informes/FrmReciboFunc.php";
 			 </script>';
         }
     //Build table
@@ -120,7 +120,7 @@ $pdf->Cell(0,0,'Fecha:',0,0,'L',false);//Fecha
 $pdf->text(23,36,$fecha);
 $pdf->Ln(4);
 $pdf->Cell(0,0,'Nombre Funcionario:',0,0,'L',false);//Nombre de Funcionario
-$pdf->text(45,40,$funcionario);
+$pdf->text(45,40,utf8_decode($funcionario));
 $pdf->text(147,40,'Ficha:');
 $pdf->text(158,40,$ficha);
 $pdf->Ln(4);

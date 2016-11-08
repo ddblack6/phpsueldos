@@ -70,7 +70,7 @@ $pdf->AddPage('L', 'legal');
 $pdf->SetFont('Arial','',6);
 
 //Connection and query
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 $pdf->SetFont('Arial','',8);
 $pdf->SetFillColor(224,235,255);

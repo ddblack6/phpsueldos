@@ -42,7 +42,7 @@
                      
                      echo '<script type="text/javascript">
 			alert("El Funcionario ya existe. Intente Ingresar otro Funcionario..");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmFuncionarioNuevo.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmFuncionarioNuevo.php";
 			 </script>';
                       }else{              
                             //se define el Query   
@@ -52,7 +52,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmFuncionarioNuevo.php");
+                            header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmFuncionarioNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -67,7 +67,7 @@
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $codigo=0;
                 $var=0;
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmFuncionarioModif.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmFuncionarioModif.php");
             }
        //
         ?>

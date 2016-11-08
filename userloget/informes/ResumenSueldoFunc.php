@@ -82,8 +82,8 @@ $pdf->SetTextColor(0);
  if  (empty($_POST['txtfechahasta'])){$hastafecha=0;}else{$hastafecha=$_POST['txtfechahasta'];}
 //Connection and query
 
-$pregunta='dbname=dbsalario port=5432 user=postgres password=postgres';
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$pregunta='dbname=dbsalario port=5432 user=postgres password=postgres_server';
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 
 
@@ -129,7 +129,7 @@ while($i<$numregs)
     
      
     $pdf->Cell(15,10,$item,1,0,'C',$fill);
-    $pdf->Cell(55,10,$funcionario,1,0,'L',$fill);
+    $pdf->Cell(55,10,utf8_decode($funcionario),1,0,'L',$fill);
     $pdf->Cell(20,10,$fecha,1,0,'C',$fill);
     $pdf->Cell(25,10,number_format($sueldobruto, 0, '', '.'),1,0,'C',$fill);
     $pdf->Cell(25,10,number_format($IPS, 0, '', '.'),1,0,'C',$fill);

@@ -76,7 +76,7 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('N1', 'Total Descuentos')
             ->setCellValue('O1', 'Neto a Cobrar');
 //aqui ingresare mi consulta y mis valores
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 if ($choice==1){
     $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by max(cat.cat_cod) ) as lineas,
@@ -220,8 +220,8 @@ if ($choice==1){
                     INNER JOIN linea lin
                     on lin.lin_cod=lindet.lin_cod
                     where SAL.fun_cod=FUN.fun_cod
-                    and EXTRACT(MONTH FROM sal_fecha)= $mes
-                    and EXTRACT(YEAR FROM sal_fecha)= $anho  
+                     and EXTRACT(MONTH FROM sal_fecha)= EXTRACT(MONTH FROM now())
+                    and EXTRACT(YEAR FROM sal_fecha)= EXTRACT(YEAR FROM now())  
                     group by FUN.fun_cod 
                     order by nrolinea,nombres");   
     

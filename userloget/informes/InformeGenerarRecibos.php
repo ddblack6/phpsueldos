@@ -42,7 +42,7 @@ if  (empty($_POST['txtOrganismo'])){$codigo=0;}else{$codigo=$_POST['txtOrganismo
 
 
 //Connection and query
-$conectate=pg_connect("host=192.168.0.99 port=5432 dbname=salario user=postgres password=postgres"
+$conectate=pg_connect("host=192.168.0.18 port=5432 dbname=salario2016 user=postgres password=postgres_server"
                     . "")or die ('Error al conectar a la base de datos');
 /*
  * aqui realizamos la consulta y cargamos los datos en valores..
@@ -89,7 +89,7 @@ $consulta=pg_exec($conectate,"SELECT row_number()over (partition by 0 order by m
 	{
 			echo '<script type="text/javascript">
 			alert("No hay datos para mostrar");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/informes/FrmGenerarReciboOrgan.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/informes/FrmGenerarReciboOrgan.php";
 			 </script>';
         }
     //Build table

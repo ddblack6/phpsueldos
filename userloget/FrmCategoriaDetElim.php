@@ -38,7 +38,7 @@
         }
         function Cancelar(){
              
-            location.href("http://192.168.0.99/web/phpsueldos2015/principal.php")
+            location.href("http://aplicaciones.intn.gov.py/web/phpsueldos2016/principal.php")
            
         }
     </script>

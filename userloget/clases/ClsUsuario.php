@@ -44,7 +44,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmusuarioNuevo.php");
+                            header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmusuarioNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -57,7 +57,7 @@
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
                 $codigo=0;
                 $var=0;
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmusuarioModif.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmusuarioModif.php");
             }
        //
         ?>

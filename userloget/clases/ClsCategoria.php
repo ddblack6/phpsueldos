@@ -34,7 +34,7 @@
                      
                         echo '<script type="text/javascript">
 			alert("La Categoria ya existe. Intente Ingresar otra Categoria..");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaNuevo.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmCategoriaNuevo.php";
 			 </script>';
                        
                       }else{              
@@ -44,7 +44,7 @@
                             $ejecucion = pg_query($query)or die('Error al realizar la carga');
                             $query = '';
                             $var=0;
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaNuevo.php");
+                            header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmCategoriaNuevo.php");
                             }
          }
            //si el registro es en modificar modificar
@@ -56,7 +56,7 @@
                 $var=0;
                 //ejecucion del query
                 $ejecucion = pg_query($query)or die('Error al realizar la carga');
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmCategoriaModif.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmCategoriaModif.php");
             }
        //
         ?>

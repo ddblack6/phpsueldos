@@ -27,6 +27,8 @@
           if  (empty($_POST['Nsal_ips'])){$IPS=0;}else{ $IPS= $_POST['Nsal_ips'];}
           if  (empty($_POST['Nsal_rep'])){$reposo=0;}else{$reposo=$_POST['Nsal_rep'];}
           if  (empty($_POST['Nsal_neto'])){$sueldoNeto=0;}else{$sueldoNeto=$_POST['Nsal_neto'];}
+	  if  (empty($_POST['Nsal_ips_rep'])){$sal_ips_rep=0;}else{$sal_ips_rep=$_POST['Nsal_ips_rep'];}
+
           //estos son los montos de tipo descuento
           if  (empty($_POST['Ntipo_des1'])){$MontoDescuento1=0;}else{$MontoDescuento1=$_POST['Ntipo_des1'];}
           if  (empty($_POST['Ntipo_des2'])){$MontoDescuento2=0;}else{$MontoDescuento2=$_POST['Ntipo_des2'];}
@@ -52,7 +54,7 @@
                      
                      echo '<script type="text/javascript">
 			alert("El Sueldo del Funcionario ya ha sido generado..!");
-			 window.location="http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php";
+			 window.location="http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php";
 			 </script>';
                        
                       }else{
@@ -105,7 +107,7 @@
                                 //ejecucion del query
                                 $ejecucion = pg_query($query)or die('Error al realizar la carga'); 
                                 }
-                            header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                            header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
                             }
          }
            //si el  registro es modificar ASO.
@@ -126,7 +128,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                 header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php"); 
+                 header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php"); 
         }
                  //si el  registro es modificar IPS.
         elseif ($var==3){
@@ -146,7 +148,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
         }
         //si el  registro es modificar descuendo Judicial.
         elseif ($var==4){
@@ -166,18 +168,20 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==5){
                 conexionlocal();
                 $query ='';
                 $reposo=round($reposo);
                 $sueldoNeto=round($sueldoNeto);
+				$sal_ips_rep=round($sal_ips_rep);
                 //se define el Query   
                 $query = "update salario set usu_cod=1
                 ,fun_cod=$codFuncionario
                 ,sal_fecha='now()'
                 ,sal_rep=$reposo
+				,sal_ips=$sal_ips_rep
                 ,sal_neto=$sueldoNeto
                 where sal_cod=$codSalario;";
                 //ejecucion del query
@@ -185,7 +189,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==6){
                 conexionlocal();
@@ -206,7 +210,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
         }
         elseif ($var==7){
                 conexionlocal();
@@ -228,7 +232,7 @@
                 $query = '';
                 $var=0;
                 //redirigir
-                header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");
+                header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");
         }
 //*********************************************************************************************************************
 //esto ya es parte de tipo descuento
@@ -261,10 +265,10 @@
                                 //ejecucion del query
                                 $ejecucion = pg_query($query)or die('Error al realizar la carga'); 
                                 }
-         //  header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/FrmConsultaSueldo.php");                 
+         //  header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/FrmConsultaSueldo.php");                 
             
             else{ 
-             header("Refresh:0; url=http://192.168.0.99/web/phpsueldos2015/userloget/principal.php");
+             header("Refresh:0; url=http://aplicaciones.intn.gov.py/web/phpsueldos2016/userloget/principal.php");
              
              }
        
